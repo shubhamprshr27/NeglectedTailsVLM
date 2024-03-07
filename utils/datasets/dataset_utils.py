@@ -63,8 +63,11 @@ SPLIT_NAMES = {
 
 from .tensor_dataset import TensorDataset
 
-def get_dataset(dataset, dataset_root, preprocess, split, pre_extracted_config: dict = None):
-    print(split)
+def get_dataset(dataset, 
+                dataset_root, 
+                preprocess, 
+                split, 
+                pre_extracted_config: dict = None):
     if split in SPLIT_NAMES:
         split = SPLIT_NAMES[split][dataset]
     # Caltech101(root=dataset_root, transform=preprocess, split=split)
@@ -88,8 +91,6 @@ def get_dataset(dataset, dataset_root, preprocess, split, pre_extracted_config: 
         torch_dataset = FGVCAircraft(root=dataset_root, split=split, transform=preprocess, download=True)
     elif dataset in ['stanford_cars', 'caltech101', 'eurosat', 'sun397', 'imagenet_sketch']:
         torch_dataset = GenericDataset(root=dataset_root, split=split, transform=preprocess, dataset_name=dataset)
-    # elif dataset == 'caltech101':
-        # torch_dataset = Caltech101(root=dataset_root, transform=preprocess, download=True)
     elif dataset == 'dtd':
         torch_dataset = DTD(root=dataset_root, split=split, transform=preprocess, download=True) 
     elif dataset == 'food101':
