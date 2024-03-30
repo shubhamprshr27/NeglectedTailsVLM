@@ -1,12 +1,7 @@
-import os
 import clip
-import json
 import torch
 import random
-import argparse
 import time
-import copy
-import pickle
 
 def prompt_sampler(prompt_tensors, logger = None, sample_by='mean'):
     sampled_prompts = []
@@ -53,10 +48,4 @@ def get_text_features(model, prompt_dict, logger=None, operation='encode', token
                 source['mean'] = mean_tensor
             tensor_list.append(source)
         return tensor_list
-
-    
-    
-        
-        
-            
     

@@ -11,7 +11,7 @@ import random
 import argparse
 from pre_extract_features import pre_extract_directory, save_dataset_feats
 from utils.prompt_templates import prompt_maker
-from clip_cross_modal import driver as clip_cross_modal_train
+from clip_cross_modal import train
 from analysis.tail_analysis import calculate_head_tail_acc
 import copy
 
@@ -122,7 +122,7 @@ if __name__ == '__main__':
    
     args = parser.parse_args()
     arch_name = args.arch.replace("/", "-")
-    retrieved_folder_name = f'retrieved_1m-alternates-random' # class_name-satellite    
+    retrieved_folder_name = f'retrieved_1m-alternates-random'
     dataset_root = f'./data/{args.dataset}'
     root_folder = f'./data/{args.dataset}/{retrieved_folder_name}'
     metrics = json.load(open(f'./analysis/laion/{args.dataset}/metrics-{args.pre_training_dataset.upper()}.json', 'r'))
@@ -134,8 +134,8 @@ if __name__ == '__main__':
     model, train_preprocess, preprocess, tokenizer = get_engine(arch=args.arch, corpus=args.pre_training_dataset, mode='train')
 
 
-    random.seed(0)
-    torch.manual_seed(0)
+    # random.seed()
+    # torch.manual_seed()
 
     # Check whether pre_extracted_feats exist.
     pre_extracted_feats = None
@@ -178,7 +178,7 @@ if __name__ == '__main__':
     print('iters',num_iters)
     
     # Cross-Modal training.
-    val_acc, best_head, confusion_matrices = clip_cross_modal_train(
+    val_acc, best_head, confusion_matrices = train(
         arch=args.arch,
         pre_training_corpus=args.pre_training_dataset,
         prompts=text_prompts,
@@ -190,7 +190,6 @@ if __name__ == '__main__':
         wd=0.01, # fixed zero-shot hyper-parameter from previous literature.
         dataset=args.dataset,
         extracted_feats_path=pre_extracted_path,
-        early_stopping=False,
         max_iters=int(num_iters)
     )
 

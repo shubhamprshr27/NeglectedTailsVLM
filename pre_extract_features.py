@@ -1,4 +1,4 @@
-from utils.datasets.dataset_utils import SPLIT_NAMES, get_dataset, DatasetWrapper
+from utils.datasets.dataset_utils import SPLIT_NAMES, get_dataset
 import torch
 from torch.utils.data import DataLoader
 from utils.extras import get_engine, OPENCLIP_MODEL_DIC
