@@ -3,7 +3,6 @@ import torch
 from torch.utils.data import DataLoader
 from utils.extras import get_engine, OPENCLIP_MODEL_DIC
 import os
-import json
 import argparse
 import time
 import pickle

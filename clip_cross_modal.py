@@ -96,7 +96,6 @@ def cross_modal_train(model,head, optimizer, scheduler, tokenizer, prompts_datal
                                           show_confusion_matrix=True, 
                                           Epoch=i, 
                                           device = device,
-                                          dataset='imagenet_1k',
                                           pre_extracted=True)           
     return val_acc, best_head.cpu(), val_confusion_mat
 
@@ -165,8 +164,8 @@ def train(arch,
     text_dataset = TextTensorDataset(model=model, tokenizer=tokenizer, prompts=prompts)
     text_dataloader = DataLoader(text_dataset, batch_size=bsz, shuffle=True, pin_memory=True, drop_last=True, num_workers=0)
 
-    zs_val_acc, zs_confusion_mat = validate(val_dataloader, model, logger=None, classifier_head=head, show_confusion_matrix = True, Epoch=-1, device = device,dataset=dataset, pre_extracted=True)
-    print('ZS accuracy at iter -1',zs_val_acc )
+    zs_val_acc, zs_confusion_mat = validate(val_dataloader, model, logger=None, classifier_head=head, show_confusion_matrix = True, Epoch=-1, device = device, pre_extracted=True)
+    print('ZS accuracy:',zs_val_acc )
     best_val_acc, best_head, val_confusion_mat = cross_modal_train(model=model, 
             head=head, 
             optimizer=optimizer, 

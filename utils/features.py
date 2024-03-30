@@ -1,7 +1,6 @@
 import clip
 import torch
 import random
-import time
 
 def prompt_sampler(prompt_tensors, logger = None, sample_by='mean'):
     sampled_prompts = []
@@ -31,7 +30,6 @@ def operate_on_prompt(model, text, operation, tokenize = clip.tokenize):
 def get_text_features(model, prompt_dict, logger=None, operation='encode', tokenize=clip.tokenize):
     tensor_list = []
     with torch.no_grad():
-        start = time.time()
         for i, species in enumerate(prompt_dict):
             obj = prompt_dict[species]
             source = {}

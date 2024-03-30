@@ -7,7 +7,6 @@ import torch
 import time
 from utils import features
 import json
-import random
 import argparse
 from pre_extract_features import pre_extract_directory, save_dataset_feats
 from utils.prompt_templates import prompt_maker
