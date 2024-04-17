@@ -1,5 +1,5 @@
 # NeglectedTailsVLM
-This repository houses the code for the paper - "The Neglected of VLMs".
+This repository houses the code for the paper - "The Neglected of Vision Language Moodels".
 
 # Updates
 16/04/2024. Code released for REAL-Linear and REAL-prompt, analysis code is on the way.
