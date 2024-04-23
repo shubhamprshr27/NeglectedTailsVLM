@@ -2,6 +2,7 @@ import pickle
 import json
 import numpy as np
 import os
+import argparse
 
 def calculate_true_freq(metrics, llama_stats = {}):
     for i, key in enumerate(metrics):
@@ -35,3 +36,18 @@ def calculate_head_tail_acc(dataset, pretrained_dataset, confusion_matrix, metho
     
     head_acc, tail_acc = tail_hypothesis(metrics=metrics, confusion_matrices=[{'name':method_name,'data':confusion_matrix}], tail_ratio=tail_ratio)
     return sum(head_acc[0])*100/len(head_acc[0]), sum(tail_acc[0])*100/len(tail_acc[0])
+
+
+if __name__ =='__main__':
+    parser = argparse.ArgumentParser(description='Arguments for script.')
+    parser.add_argument('--dataset', type=str, default='', help='learning rate for optimizer')
+    parser.add_argument('--pretrained_dataset', default='laion400m', type=str)
+    args = parser.parse_args()
+
+    llama_analysis_file = pickle.load(open(os.path.join('laion', args.dataset,f'analysis-llama-{args.pretrained_dataset.upper()}'), 'rb'))
+    metrics_path = os.path.join('laion', args.dataset, f'metrics-{args.pretrained_dataset.upper()}.json')
+    metrics = json.load(open(metrics_path, 'r'))
+
+    metrics_with_true_freq = calculate_true_freq(metrics=metrics, llama_stats=llama_analysis_file)
+    print(f'Metrics of dataset: {args.dataset}, pretraining corpus: {args.pretrained_dataset}')
+    print(metrics_with_true_freq)
