@@ -30,8 +30,7 @@ python laion_parser.py --database LAION400M --downstream imagenet_1k --datasourc
 ```
 torchrun llama_miner.py --dataset imagenet_1k --world_size 8 --pre_trained_corpus LAION400M
 ```
-  The output of this step should be pickle files, each file is an ordered dict according to class IDs. The ordered dict contains relevant 
-  captions to the downstream concept names and filters out irrelevant ones, giving us a relevance metric which is defined as `(number of captions relevant to downstream task) / (total number of captions)` 
+&nbsp;The output of this step should be pickle files, each file is an ordered dict according to class IDs. The ordered dict contains relevant captions to the downstream concept names and filters out irrelevant ones, giving us a relevance metric which is defined as `(number of captions relevant to downstream task) / (total number of captions)` 
   
 3. Now having filtered captions, we can estimate the frequency by running the file: `/analysis/tail_analysis.py`
 ```
