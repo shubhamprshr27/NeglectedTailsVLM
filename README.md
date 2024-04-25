@@ -1,5 +1,5 @@
 # NeglectedTailsVLM
-This repository houses the code for the paper - "The Neglected of Vision Language Moodels".
+This repository houses the code for the CVPR 2024 paper - "The Neglected of Vision Language Moodels".
 
 # Updates
 20/04/2024. Analysis code has been released. Documentation being updated along with release of data and captions.
