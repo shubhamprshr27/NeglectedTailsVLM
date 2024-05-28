@@ -35,7 +35,7 @@ def save_dataset_feats(dataset_dict,
                        split, 
                        pre_training_corpus, 
                        arch, 
-                       save_dir: str='./data/test_data'): # 'pre_extracted'
+                       save_dir: str='./data/pre_extracted'): # 'pre_extracted'
     destination = os.path.join(save_dir,dataset_name)
 
 
