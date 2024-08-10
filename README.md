@@ -2,7 +2,7 @@
 This repository houses the code for the CVPR 2024 paper - "The Neglected of Vision Language Moodels".
 
 # Updates
-2024-08-10: Please check out our latest work [SWAT](https://tian1327.github.io/SWAT/) which explores retrieval-augmented learning for few-shot recognition!!
+2024-08-10: Please check out our latest work [SWAT](https://tian1327.github.io/SWAT/) which explores retrieval-augmented learning for few-shot recognition!! See [RETRIEVAL.md](https://github.com/tian1327/SWAT/blob/master/retrieval/RETRIEVAL.md) for step-by-step instructions for retrieving pretraining data.
 
 2024-04-20: Analysis code has been released. Documentation being updated along with release of data and captions.
 
