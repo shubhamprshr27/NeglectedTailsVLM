@@ -39,3 +39,25 @@ torchrun llama_miner.py --dataset imagenet_1k --world_size 8 --pre_trained_corpu
 python tail_analysis.py --dataset imagenet_1k --pre_trained_corpus LAION400M
 ```
 4. If you would just like to access the frequency of a given concept in a given dataset, you can directly refer to `/analysis/laion/{dataset}/metrics-{pre_trained_corpus}.json` the `relevant_total` is the estimated frequency obtained after analyzing using LLaMA.
+
+
+## Citation
+
+If you find our project useful, please consider citing:
+
+```bibtex
+@article{liu2024few,
+  title={Few-Shot Recognition via Stage-Wise Retrieval-Augmented Finetuning},
+  author={Liu, Tian and Zhang, Huixin and Parashar, Shubham and Kong, Shu},
+  journal={arXiv preprint arXiv:2406.11148},
+  year={2024}
+}
+
+@inproceedings{parashar2024neglected,
+  title={The Neglected Tails in Vision-Language Models},
+  author={Parashar, Shubham and Lin, Zhiqiu and Liu, Tian and Dong, Xiangjue and Li, Yanan and Ramanan, Deva and Caverlee, James and Kong, Shu},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2024}
+}
+
+```
