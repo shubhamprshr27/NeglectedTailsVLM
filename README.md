@@ -2,6 +2,8 @@
 This repository houses the code for the CVPR 2024 paper - "The Neglected Tails of Vision Language Models".
 
 # Updates
+2025-02-26: Our work [SWAT](https://tian1327.github.io/SWAT/) on applying Retrieval-Augmented Learning (RAL) for Few-shot Recognition (FSR) has been accepted to CVPR'25. Please check it out.
+
 2024-08-10: Please check out our latest work [SWAT](https://tian1327.github.io/SWAT/) which explores retrieval-augmented learning for few-shot recognition!! See [RETRIEVAL.md](https://github.com/tian1327/SWAT/blob/master/retrieval/RETRIEVAL.md) for step-by-step instructions for retrieving pretraining data.
 
 2024-04-20: Analysis code has been released. Documentation being updated along with release of data and captions.
@@ -46,11 +48,11 @@ python tail_analysis.py --dataset imagenet_1k --pre_trained_corpus LAION400M
 If you find our project useful, please consider citing:
 
 ```bibtex
-@article{liu2024few,
+@inproceedings{liu2025few,
   title={Few-Shot Recognition via Stage-Wise Retrieval-Augmented Finetuning},
   author={Liu, Tian and Zhang, Huixin and Parashar, Shubham and Kong, Shu},
-  journal={arXiv preprint arXiv:2406.11148},
-  year={2024}
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2025}
 }
 
 @inproceedings{parashar2024neglected,
