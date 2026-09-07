@@ -45,13 +45,12 @@ python tail_analysis.py --dataset imagenet_1k --pre_trained_corpus LAION400M
 
 ## Related Works
 
-Check out our related works below:
-
 - [POC](https://tian1327.github.io/POC/) (arXiv 2025): harnessing large multimodal models for few-shot visual species recognition
-- [SWIFT](https://tian1327.github.io/SWIFT/) (arXiv 2025): enabling successful semi-supervised learning with VLM
+- [SWIFT](https://tian1327.github.io/SWIFT/) (ECCV 2026): enabling successful semi-supervised learning with VLM
 - [VEST](https://hannawang09.github.io/projects/vest/) (arXiv 2025): retrieving open data for validation in few-shot learning
 - [SWAT](https://tian1327.github.io/SWAT/) (CVPR 2025): retrieving open data for few-shot finetuning a VLM
 - [REAL](https://shubhamprshr27.github.io/neglected-tails-of-vlms/) (CVPR 2024): uncovering the failures and causes in zero-shot VLMs
+
 
 ## Citation
 
@@ -72,24 +71,10 @@ If you find our project useful, please consider citing:
   year={2025}
 }
 
-@article{liu2025swift,
-title={Solving Semi-Supervised Few-Shot Learning from an Auto-Annotation Perspective}, 
-author={Liu, Tian and Basu, Anwesha and Kong, Shu},
-journal={arXiv preprint arXiv:2512.10244},
-year={2025}
-}
-
-@article{liu2025poc,
-title={Surely Large Multimodal Models (Don’t) Excel in Visual Species Recognition?}, 
-author={Liu, Tian and Basu, Anwesha and Kong, Shu},
-journal={arXiv preprint arXiv:2512.15748},
-year={2025}
-}
-
-@article{wang2025enabling,
-title={Enabling Validation for Robust Few-Shot Recognition}, 
-author={Wang, Hanxin and Liu, Tian and Kong, Shu},
-journal={arXiv preprint arXiv:2506.04713},
-year={2025}
+@article{liu2026solving,
+title={Solving Semi-Supervised Few-Shot Learning from an Auto-Annotation Perspective},
+author={Liu, Tian and Basu, Anwesha and Caverlee, James and Kong, Shu},
+journal={European Conference on Computer Vision (ECCV)},
+year={2026}
 }
 ```
